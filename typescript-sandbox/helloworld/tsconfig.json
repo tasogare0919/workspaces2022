@@ -1,0 +1,15 @@
+// 参考 https://qiita.com/Yuki-Kurita/items/5e449e2c05aaeeef80ac
+{
+    "compilerOptions": {
+        "target": "ES2015",
+        "outDir": "dist",
+        "sourceMap": true,
+        "strict": true
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
