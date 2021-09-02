@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: lambda go send to slack.
+Resources:
+  SendSlack:
+    Properties:
+      CodeUri: s3://xxxx/xxxx/xxxx
+      Events:
+        Environment:
+          Variables:
+            slackURL: https://hooks.slack.com/services/xxxx
+        Timer:
+          Properties:
+            Schedule: cron(* * * * ? *)
+          Type: Schedule
+      Handler: main
+      Runtime: go1.x
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31
