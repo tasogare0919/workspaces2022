@@ -1,0 +1,26 @@
+- name: yum update
+  become: yes
+  yum:
+    name: '*'
+    state: latest 
+
+- name: Install nginx
+  yum:
+    name: nginx
+    state: latest
+
+- name: enable Nginx
+  systemd:
+    name: nginx
+    enabled: yes
+
+- name: Move nginx.conf
+  template:
+     src: nginx.conf
+     dest: /etc/nginx/nginx.conf
+  notify: restart nginx
+
+- name: Start nginx
+  service:
+    name: nginx
+    state: started

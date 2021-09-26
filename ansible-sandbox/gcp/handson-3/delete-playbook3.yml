@@ -1,0 +1,25 @@
+---
+- hosts: web
+  name: install Apache web server
+  become: yes
+  vars:
+    install_module:
+      - httpd
+      - mod_wsgi
+    apache_test_message: This is a test message
+    apache_max_keep_alive_requests: 115
+  tasks:
+    - name: delete module
+      yum:
+        name: "{{item}}"
+        state: absent
+      with_items: "{{install_module}}"
+    - name: delete httpd.conf
+      file:
+        path: /etc/httpd/conf/httpd.conf
+        state: absent
+
+    - name: delete index.html
+      file:
+        path: /var/www/html/index.html
+        state: absent

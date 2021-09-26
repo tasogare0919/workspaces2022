@@ -1,0 +1,38 @@
+---
+- name: my ansible start
+  hosts: vagrants
+
+  tasks:
+  - name: update all pagages
+    yum:
+      name: '*'
+      state: latest
+  - name: install nginx
+    yum:
+      name: http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+      state: installed
+  - name: install Nodejs
+    yum:
+      name: https://rpm.nodesource.com/pub_12.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
+      state: installed
+  - name: install lists of packages
+    yum:
+      name:
+        - nginx
+        - postgresql
+        - postgresql-server
+        - git 
+        - nodejs
+      state: installed
+  - name: nginx service started
+    service:
+       name: nginx
+       state: started
+       enabled: yes
+  - name: create public directories
+    file:
+      path: /home/vagrant/app
+      state: directory
+      mode: '0755'
+      owner: vagrant
+      group: vagrant

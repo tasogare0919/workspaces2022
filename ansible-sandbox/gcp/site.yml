@@ -1,0 +1,5 @@
+- name: Top Level Playbook Sample
+  # hosts:
+  #   - 34.146.80.25
+  tasks:
+    - shell: pwd

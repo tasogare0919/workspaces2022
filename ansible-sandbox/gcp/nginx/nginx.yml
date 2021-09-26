@@ -1,0 +1,15 @@
+- hosts: all
+  become: yes
+  gather_facts: false
+  tasks:
+    - name: install Nginx
+      yum:
+        name: nginx
+    - name: yum update
+      yum:
+        name: '*'
+        state: latest
+    - name: enable Nginx
+      systemd:
+        name: nginx
+        enabled: yes

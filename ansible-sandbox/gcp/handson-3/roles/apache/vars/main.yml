@@ -1,0 +1,4 @@
+---
+# vars file for apache
+httpd_packages:
+  - nginx

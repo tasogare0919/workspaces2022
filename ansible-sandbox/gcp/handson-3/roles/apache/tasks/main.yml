@@ -1,0 +1,39 @@
+---
+# tasks file for nginx
+- name: install httpd packages
+  yum:
+    name: nginx
+    state: latest
+  with_items: "{{httpd_packages}}"
+  #notify: restart apache service
+
+# - name: copy httpd.conf
+#   template:
+#     src: templates/httpd.conf.j2
+#     dest: /etc/httpd/conf/httpd.conf
+#   notify: restart nginx service
+
+# - name: install Nodejs
+#   yum:
+#     name: https://rpm.nodesource.com/pub_12.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
+#     state: installed
+
+- name: install lists of packages
+  yum:
+    name:
+      - postgresql
+      - postgresql-server
+      - git 
+      - nodejs
+    state: installed
+
+- name: copy index.html
+  template:
+     src: templates/index.html.j2
+     dest: /var/www/html/index.html
+     
+# - name: nginx service started
+#   service:
+#     name: nginx
+#     state: started
+#     enabled: yes

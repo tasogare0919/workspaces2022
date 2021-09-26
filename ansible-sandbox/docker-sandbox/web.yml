@@ -1,0 +1,5 @@
+---
+- hosts: WebServer
+  become: yes
+  roles:
+    - { role: nginx, tags: nginx}
