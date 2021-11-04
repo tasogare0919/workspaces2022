@@ -1,0 +1,14 @@
+apiVersion: v1
+data:
+  config.yaml: |-
+    sinks:
+    - name: stdout
+    - name: newRelicInfra
+      config:
+        agentEndpoint: http://localhost:8001/v1/data
+        agentHTTPTimeout: 30s
+        clusterName: "test"
+kind: ConfigMap
+metadata:
+  name: nri-kube-events
+  namespace: default

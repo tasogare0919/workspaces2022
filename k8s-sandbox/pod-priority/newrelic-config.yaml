@@ -1,0 +1,7 @@
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: newrelic-config
+data:
+  monitor.clustername: tada-test
