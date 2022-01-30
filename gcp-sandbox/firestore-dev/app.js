@@ -2,14 +2,14 @@
     try {
       const firebase = require('firebase')
       const config = {
-        apiKey: 'AIzaSyAQdhn6qGQ6peEwC2a41w5wv9Qbo7Fob_Y',
+        apiKey: 'xxx',
         // authDomain: '### FIREBASE AUTH DOMAIN ###',
-        projectId: 'kaggle-261706',
+        projectId: 'hoge',
       }
       firebase.initializeApp(config)
       const db = firebase.firestore()
   
-      const userRef = db.collection('users').doc('DYzRDWLmm1EiH628s8Pw')
+      const userRef = db.collection('users').doc('xxx')
       const userDoc = await userRef.get()
       if (userDoc.exists) {
         console.log(userDoc.id)
