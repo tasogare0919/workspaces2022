@@ -2,7 +2,7 @@
 192.168.33.10
 
 [vagrants:vars]
-ansible_ssh_private_key_file=/Users/sadayoshitada/sandbox-codes/ansible-sandbox/docker-sandbox/.vagrant/machines/default/virtualbox/private_key
+ansible_ssh_private_key_file=/Users/hoge/sandbox-codes/ansible-sandbox/docker-sandbox/.vagrant/machines/default/virtualbox/private_key
 ansible_become=yes
 ansible_user=vagrant
 ansible_become_method=su

@@ -3,13 +3,13 @@
   tasks:
   - name: create directory
     file:
-        path: /Users/sadayoshitada/sandbox-codes/ansible-sandbox/ch2/tmp
+        path: /Users/hoge/sandbox-codes/ansible-sandbox/ch2/tmp
         state: directory
         owner: sadayoshitada
         mode: 0755
   - name: copy file
     copy:
         src: /etc/hosts
-        dest: /Users/sadayoshitada/sandbox-codes/ansible-sandbox/ch2/tmp
+        dest: /Users/hoge/sandbox-codes/ansible-sandbox/ch2/tmp
         owner: sadayoshitada
         mode: 0644

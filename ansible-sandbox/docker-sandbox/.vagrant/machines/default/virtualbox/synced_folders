@@ -1,1 +1,1 @@
-{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/Users/sadayoshitada/sandbox-codes/ansible-sandbox/docker-sandbox","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/Users/hoge/sandbox-codes/ansible-sandbox/docker-sandbox","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}
