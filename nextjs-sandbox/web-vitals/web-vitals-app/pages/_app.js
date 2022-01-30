@@ -1,14 +1,6 @@
 // import App from 'next/app'
 var AWS = require('aws-sdk');
 
-// AWS.config.update({
-//   credentials: new AWS.Credentials(
-//     "AKIAIOSFODNN7EXAMPLE",
-//     "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
-//   ),
-//   region: 'us-west-2'
-// });
-
 // Create CloudWatch service object
 var cw = new AWS.CloudWatch({apiVersion: '2010-08-01'});
 
