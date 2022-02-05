@@ -6,19 +6,7 @@ const expressPlayground = require('graphql-playground-middleware-express').defau
 const resolvers = require(`./resolvers`)
 
 require(`dotenv`).config()
-const typeDefs = readFileSync(`./typeDefs.graphql`, `UTF-8`)
-
-
-// ユニークIDをインクリメントするための変数
-var _id = 0
-// 写真を格納するための配列
-var photos = []
-var tags = [
-    { "photoID": "1", "userID": "gPlake"},
-    { "photoID": "2", "userID": "sSchmidt" },
-    { "photoID": "2", "userID": "mHattrup" },
-    { "photoID": "2", "userID": "gPlake"}
-]
+var typeDefs = readFileSync(`./typeDefs.graphql`, `UTF-8`)
 
 async function start() {
     const app = express()
@@ -53,8 +41,6 @@ const server = new ApolloServer({
 
 // applyMiddlewareを呼び出しexpressにミドルウェアを追加
 server.applyMiddleware( { app })
-
-
 app.get('/playground', expressPlayground({ endpoint: '/graphql' }))
 app.get('/', (req, res) => {
     let url = `https://github.com/login/oauth/authorize?client_id=${process.env.CLIENT_ID}&scope=user`
