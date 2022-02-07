@@ -1,0 +1,2 @@
+copy company(company_cd,rr_cd,company_name,company_name_k,company_name_h,company_name_r,company_url,company_type,e_status,e_sort)
+    from '/docker-entrypoint-initdb.d/company20200619.csv' with csv header;
