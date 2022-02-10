@@ -1,4 +1,4 @@
-.PHONY: createdb dropdb postgres migratedown migrateup sqlc run
+.PHONY: createdb dropdb postgres migratedown migrateup sqlc run test
  
 run:
 	docker run --name postgres12 -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:12-alpine
@@ -17,3 +17,6 @@ migratedown:
 	migrate -path db/migration -database "postgresql://root:secret@localhost:5432/simple_bank?sslmode=disable" -verbose down
 sqlc:
 	sqlc generate
+
+test:
+	go test -v -cover ./...
