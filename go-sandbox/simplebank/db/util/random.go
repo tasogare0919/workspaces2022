@@ -29,7 +29,7 @@ func RnadomString(n int) string {
 
 }
 
-func RadomOwner() string {
+func RandomOwner() string {
 	return RnadomString(6)
 }
 
