@@ -33,8 +33,11 @@ jobs:
           curl -L https://github.com/golang-migrate/migrate/releases/download/v4.12.2/migrate.linux-amd64.tar.gz | tar xvz
           sudo mv migrate.linux-amd64 /usr/bin/migrate
           which migrate
-          cd go-sandbox/simplebank/
       - name: Run migrations
-        run: make migrateup
+        run: | 
+          cd go-sandbox/simplebank
+          make migrateup
       - name: Test
-        run: make test
+        run: |
+          cd go-sandbox/simplebank
+          make test
