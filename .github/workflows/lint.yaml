@@ -1,0 +1,29 @@
+name: build-and-test
+
+on:
+  push:
+    branches:
+      - "main"
+
+defaults:
+  run:
+    working-directory: go-sandbox/go-oreilly
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go 1.x
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.x
+        id: go
+      - name: Check out code
+        uses: actions/checkout@v3
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v2
+        with:
+          version: v1.44.2
+          args: --disable-all --enable=govet,errcheck,staticcheck,gosimple
+      - name: test
+        run: go test -v ./...
