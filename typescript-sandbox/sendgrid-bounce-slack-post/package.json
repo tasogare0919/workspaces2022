@@ -1,0 +1,11 @@
+{
+  "name": "sendgrid-bounce-slack-post",
+  "version": "0.0.1",
+  "description": "check sendgrid bounce mail",
+  "main": "index.js",
+  "author": "tasogare0919",
+  "license": "MIT",
+  "dependencies": {
+    "@sendgrid/client": "^7.7.0"
+  }
+}
